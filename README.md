@@ -67,7 +67,36 @@ This method is all about usage of snowflake data warehouse. In this method I use
   
   #### Details of all the tables and their schema:
   
-   1.
+   1. There are three tables here that are being created:
+      - Product_Final
+      - Aggregate_Final
+      - Temp_Update_Table
+   
+   2. The first table `Product_Final` has three columns: name, sku and description where *sku* is the Primary Key having 500000 rows.
+   
+      ![Capture 5](https://user-images.githubusercontent.com/50805925/128553810-8a39c883-d941-404d-bee7-2b29ccf48123.PNG)
+      
+      To create this table the command is:
+      
+      `create table postman_data.public.product_final (name text, sku text, description text, primary key (sku));`
+      
+      Few rows from this table after ingestion of products.csv:
+      
+      ![Capture 7](https://user-images.githubusercontent.com/50805925/128554920-fb0862ce-7434-459e-95b9-52914f271b05.PNG)
+    
+   3. The second table `Aggregate_Final` has three columns: name and Num_of_products having 222024 rows.
+   
+      ![Capture 6](https://user-images.githubusercontent.com/50805925/128554254-4afcf920-4471-4645-8ccf-aac6eed39b16.PNG)
+      
+      To create this table the command is:
+      
+      `create table Aggregate_final as select name, count(*) as Num_Of_Products from postman_data.public.product_final group by name;`
+      
+      Few rows from this table after aggreation query (CTAS) of product_final:
+      
+      ![Capture 8](https://user-images.githubusercontent.com/50805925/128555020-06276125-af42-4167-9f00-22f879526d53.PNG)
+
+
   
 
 
