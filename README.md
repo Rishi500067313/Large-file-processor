@@ -110,6 +110,11 @@ This method is all about usage of snowflake data warehouse. In this method I use
       
       `update product_final set product_final.description = temp_update_table.description from temp_update_table where temp_update_table.sku = product_final.sku;`
       
+  #### Points achieved by this method:
+   
+   By using the snowflake all the 4.5 out of 5 points were completely fullfilled.
+   
+   1. 
     
 
    
