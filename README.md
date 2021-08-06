@@ -36,7 +36,33 @@ Steps to run the code:
       - Use command `snowsql` to verify installtion. 
         ![Capture](https://user-images.githubusercontent.com/50805925/128549407-5f500484-6acc-4b7c-8baa-46f900f22769.PNG) 
         [Ignore the log error :-)]
-      - Now You can directly run the first script 
+      - Now You can directly run the first script Script_to_ingest_data.sql by using this command.
+      
+        To execute a SQL script while connecting to Snowflake:
+        
+        `snowsql -a az30528.east-us-2.azure -u rishi -f C://Downloads/Script_to_ingest_data.sql` 
+        
+        `snowsql -a az30528.east-us-2.azure -u rishi -f C://Downloads/Script_to_update_data.sql` 
+        
+        *Edit your accountname, username & path* After running this command firstly it will ask for your password after which the script will be executed.
+        
+        To run a SQL script after connecting to Snowflake
+         
+        `rishi#> !source Script_to_ingest_data.sql`
+      
+   5. The second way will involve the usage of UI of snowflake:
+      - Go to your console and create an new worksheet.
+      
+        ![Capture 1](https://user-images.githubusercontent.com/50805925/128551116-8892cfa6-e3ac-4f59-80a8-5e9e333f7d59.PNG)
+        
+      - Now import the script.
+      
+        ![Capture 2](https://user-images.githubusercontent.com/50805925/128551447-d027cd89-a342-4f00-9590-6adf11928cd6.PNG)
+      - 
+
+
+        
+    
 
 
       
