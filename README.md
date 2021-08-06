@@ -15,12 +15,56 @@ Points to achieve
 
 ### Method - 1: By Using Python and MySQL
 
-This the most think about method to do any work. In this method I used Python with MySQL as the database.
+This the most think about method to do any work. In this method I used Python with MySQL as the database. 
+
+  #### Details of all the tables and their schema:
+   
+   1. There are three tables here that are being created:
+      - Product_Final
+      - Aggregate_Final
+      - Temp_Update_Table
+      
+   2. The first table `Product_Final` has three columns: name, sku and description where *sku* is the Primary Key & *description* is the composite key having 500000 rows.
+      
+      ![Capture1](https://user-images.githubusercontent.com/50805925/128563574-e31210db-bede-4861-93fb-0bd73b71d9ae.PNG)
+      
+      To create this table the command is:
+      
+      `CREATE TABLE product_final(name varchar(50) NOT NULL, sku varchar(200) NOT NULL, description varchar(350) NOT NULL)`
+      
+      After ingestion of data the table is altered with this command:
+      
+      `ALTER TABLE postman_data.product_final ADD CONSTRAINT PK_sku PRIMARY KEY (sku, description);`
+      
+      Few rows from this table after ingestion of products.csv:
+      
+      ![Capture3](https://user-images.githubusercontent.com/50805925/128563908-faf43c65-c133-4369-8520-b74d57f04f6f.PNG)
+      
+   3.  The second table `Aggregate_Final` has three columns: name and Num_of_products having 222024 rows.
+   
+       ![Capture2](https://user-images.githubusercontent.com/50805925/128564389-f81b88c6-2f0c-46fd-9c10-cfdd43695080.PNG)
+       
+       To create this table the command is:
+      
+       `create table aggregate_Final as select name, count(*) as Num_Of_Products from product_final group by name;`
+       
+       Few rows from this table after aggreation query (CTAS) of product_final:
+      
+       ![Capture4](https://user-images.githubusercontent.com/50805925/128564591-ad7366c7-0cfa-46e3-bdb5-bc6a161ea6ff.PNG)
+
+       
+       
 
 
+      
+      
 
+
+  
+  
+  
 ### Method - 2: By Using Snowflake
-
+  
 This method is all about usage of snowflake data warehouse. In this method I used the snowflake with SQL to achieve all the expected tasks.
   #### Steps to run the code:
    1. Firstly we need a snowflake account to get started.
