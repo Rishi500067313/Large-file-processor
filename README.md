@@ -21,7 +21,7 @@ Points to achieve
 ### Method - 2: By Using Snowflake
 
 This method is all about usage of snowflake data warehouse. In this method I used the snowflake with SQL to achieve all the expected tasks.
-Steps to run the code:
+  #### Steps to run the code:
    1. Firstly we need a snowflake account to get started.
       You can sign up using this link to get your snowflake account: https://signup.snowflake.com/.
       
@@ -58,7 +58,17 @@ Steps to run the code:
       - Now import the script.
       
         ![Capture 2](https://user-images.githubusercontent.com/50805925/128551447-d027cd89-a342-4f00-9590-6adf11928cd6.PNG)
-      - 
+        
+      - Now after importing the script you can run all the commands in sequence to get the result but the command number 11 will still have to be run on the snowsql CLI.
+        
+        ![Capture 4](https://user-images.githubusercontent.com/50805925/128551840-2d20bbde-ab3d-44cf-9b31-f3cef7982680.PNG)
+        
+      - Same thing is to be done with the both the scripts.
+  
+  #### Details of all the tables and their schema:
+  
+   1.
+  
 
 
         
