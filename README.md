@@ -2,7 +2,7 @@
 
 Aim is to build a system which is able to handle long running processes in a distributed fashion.
 
-### Problem statement
+### Problem Statement
 
 We need to be able to import products from a CSV file and into a database. There are half a million product details to be imported into the database.After the import, we will run an aggregate query to give us no. of products with the same name.
 
@@ -40,17 +40,33 @@ This the most think about method to do any work. In this method I used Python wi
       
       ![Capture3](https://user-images.githubusercontent.com/50805925/128563908-faf43c65-c133-4369-8520-b74d57f04f6f.PNG)
       
-   3.  The second table `Aggregate_Final` has three columns: name and Num_of_products having 222024 rows.
+   3. The second table `Aggregate_Final` has three columns: name and Num_of_products having 222024 rows.
    
-       ![Capture2](https://user-images.githubusercontent.com/50805925/128564389-f81b88c6-2f0c-46fd-9c10-cfdd43695080.PNG)
+      ![Capture2](https://user-images.githubusercontent.com/50805925/128564389-f81b88c6-2f0c-46fd-9c10-cfdd43695080.PNG)
        
-       To create this table the command is:
+      To create this table the command is:
       
-       `create table aggregate_Final as select name, count(*) as Num_Of_Products from product_final group by name;`
+      `create table aggregate_Final as select name, count(*) as Num_Of_Products from product_final group by name;`
        
-       Few rows from this table after aggreation query (CTAS) of product_final:
+      Few rows from this table after aggreation query (CTAS) of product_final:
       
-       ![Capture4](https://user-images.githubusercontent.com/50805925/128564591-ad7366c7-0cfa-46e3-bdb5-bc6a161ea6ff.PNG)
+      ![Capture4](https://user-images.githubusercontent.com/50805925/128564591-ad7366c7-0cfa-46e3-bdb5-bc6a161ea6ff.PNG)
+       
+   4. The third table is only created when we need to update the table product_final. It is kind of temporary table which is dropped after its use.
+      
+      We just ingest the new csv into this table and run a update query.
+      
+      
+      
+      To create this table the command is:
+      
+      `CREATE TABLE temp_update_table (name varchar(50), sku VARCHAR(255), description VARCHAR(300) NOT NULL);`
+      
+      After creating table the new csv is ingested into the table. Then Update the products_final table using this command:
+      
+      `UPDATE product_final INNER JOIN temp_update_table on temp_update_table.sku = product_final.sku SET product_final.name = temp_update_table.name;`
+      
+      
 
        
        
@@ -141,7 +157,7 @@ This method is all about usage of snowflake data warehouse. In this method I use
       
       ![Capture 8](https://user-images.githubusercontent.com/50805925/128555020-06276125-af42-4167-9f00-22f879526d53.PNG)
       
-   4. The third table is only created when we need to update the table product_final. It is kind od temporary table which is dropped after its use.
+   4. The third table is only created when we need to update the table product_final. It is kind of temporary table which is dropped after its use.
       
       We just ingest the new csv into this table and run a update query.
       
