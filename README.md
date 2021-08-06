@@ -106,7 +106,7 @@ This method is all about usage of snowflake data warehouse. In this method I use
       
       `create table temp_update_table (name text, sku text, description text);`
       
-      `copy into temp_update_table from @my_csv_/products.csv.gz file_format = (format_name = mycsvformat_1) on_error = 'skip_file';`
+      After creating ingest the new csv into the table. Then Update the products_final table using this command:
       
       `update product_final set product_final.description = temp_update_table.description from temp_update_table where temp_update_table.sku = product_final.sku;`
       
