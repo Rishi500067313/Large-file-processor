@@ -95,6 +95,24 @@ This method is all about usage of snowflake data warehouse. In this method I use
       Few rows from this table after aggreation query (CTAS) of product_final:
       
       ![Capture 8](https://user-images.githubusercontent.com/50805925/128555020-06276125-af42-4167-9f00-22f879526d53.PNG)
+      
+   4. The third table is only created when we need to update the table product_final. It is kind od temporary table which is dropped after its use.
+      
+      We just ingest the new csv into this table and run a update query.
+      
+      ![Capture 9](https://user-images.githubusercontent.com/50805925/128555664-70438599-ad1d-4a46-ad5b-aafb0d35ae92.PNG)
+      
+      To create this table the command is:
+      
+      `create table temp_update_table (name text, sku text, description text);`
+      
+      `copy into temp_update_table from @my_csv_/products.csv.gz file_format = (format_name = mycsvformat_1) on_error = 'skip_file';`
+      
+      `update product_final set product_final.description = temp_update_table.description from temp_update_table where temp_update_table.sku = product_final.sku;`
+      
+    
+
+   
 
 
   
