@@ -12,3 +12,7 @@ Points to achieve
    3. Support for updating existing products in the table based on `sku` as the primary key.
    4. All product details are to be ingested into a single table
    5. An aggregated table on above rows with `name` and `no. of products` as the columns
+
+### Method - 1: By Using Python and MySQL
+
+
