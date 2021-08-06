@@ -15,6 +15,7 @@ Points to achieve
 
 ### Method - 1: By Using Python and MySQL
 
+This the most think about method to do any work. In this method I used Python with MySQL as the database.
 
 
 
