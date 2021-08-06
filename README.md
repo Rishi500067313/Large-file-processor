@@ -14,6 +14,10 @@ Points to achieve
    5. An aggregated table on above rows with `name` and `no. of products` as the columns
 
 ### Method - 1: By Using Python and MySQL
+### Method - 2: By Using Snowflake
+
+
+### Method - 1: By Using Python and MySQL
 
 This the most think about method to do any work. In this method I used Python with MySQL as the database. 
 
