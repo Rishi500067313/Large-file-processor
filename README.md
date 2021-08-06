@@ -20,4 +20,5 @@ Points to achieve
 
 ### Method - 2: By Using Snowflake
 
+This method is all about usage of snowflake data warehouse. In this 
 
