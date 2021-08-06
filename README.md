@@ -16,3 +16,8 @@ Points to achieve
 ### Method - 1: By Using Python and MySQL
 
 
+
+
+### Method - 2: By Using Snowflake
+
+
