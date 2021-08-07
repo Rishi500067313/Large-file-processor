@@ -18,6 +18,8 @@ Points to achieve
 
 This the most think about method to do any work. In this method I used Python with MySQL as the database. 
 
+  #### Steps to run the code:
+  
   #### Details of all the tables and their schema:
    
    1. There are three tables here that are being created:
