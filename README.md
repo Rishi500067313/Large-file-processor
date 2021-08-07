@@ -74,7 +74,7 @@ This the most think about method to do any work. In this method I used Python wi
    
   #### Points achieved by this method:
    
-   By using the snowflake all the 5 out of 5 points were completely fullfilled.
+   By using python with MySQL 4 out of 5 points were completely fullfilled.
    
    1. The python code fully uses the OOPs concept in the implementation of the task.
    2. The code does the creation & ingestion of table in about 15 seconds while the updation task involves join with temporary table so it takes about 8 minutes to complete. 
