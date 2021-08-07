@@ -70,16 +70,24 @@ This the most think about method to do any work. In this method I used Python wi
       After creating table the new csv is ingested into the table. Then Update the products_final table using this command:
       
       `UPDATE product_final INNER JOIN temp_update_table on temp_update_table.sku = product_final.sku SET product_final.name = temp_update_table.name;`
-      
-      
-
-       
-       
-
-
-      
-      
-
+   
+   
+  #### Points achieved by this method:
+   
+   By using the snowflake all the 5 out of 5 points were completely fullfilled.
+   
+   1. The python code fully uses the OOPs concept in the implementation of the task.
+   2. The code does the creation & ingestion of table in about 15 seconds while the updation task involves join with temporary table so it takes about 8 minutes to complete. 
+   3. The code has the functionality to execute the update on the product_final table. Therefore there is updation support for the table.
+   4. All the product details are ingested directly to a single table *product_final*.
+   5. The aggregate table was also created by using CTAS command on product_final. 
+  
+  #### Points not achieved by this method:
+  
+   The updation takes about 8 minutes to complete due to join so the second point somewhat fails in this case.
+   
+  #### Improving if given more days:
+  
 
   
   
