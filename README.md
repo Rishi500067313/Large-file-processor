@@ -20,7 +20,7 @@ This the most think about method to do any work. In this method I used Python wi
 
   #### Steps to run the code:
   
-  *To be updated in 2-3 hours*
+  The code is configured in a docker container. The docker image can be accessed from here: 
   
   #### Details of all the tables and their schema:
    
