@@ -31,7 +31,14 @@ This the most think about method to do any work. In this method I used Python wi
      
   5. Then use the run command to run the code:
      
-     `d`
+     `docker run -it --name postmanos -e MYSQL_ROOT_PASSWORD=password -e MYSQL_USER=root -e MYSQL_PASSWORD=password -e MYSQL_DATABASE=postman_data -v <location_of_csv>:<any_location_in_container> postman_dockerimage`
+     
+     NOTE: *You need to specify in this command where the products.csv is located and then mount it to any location in docker. The location where which choose in docker will have to be updated in the python code also.*
+     
+     ![Capture9](https://user-images.githubusercontent.com/50805925/128622624-573abe98-d773-4e44-a273-8e1c7b7e47a8.PNG) 
+     
+     Specify the location here...
+
   
   #### Details of all the tables and their schema:
    
@@ -99,7 +106,10 @@ This the most think about method to do any work. In this method I used Python wi
    
   #### Improving if given more days:
   
-
+  In this mysql method for updation join is used which becomes very expensive command to run as it takes 8 minutes of time while doing update in snowfalke jsut took 15 seconds.
+  To improve this we can use mysql query caching and avoid the inner join by using evaluate and select kind of queries.
+  
+  Apart from the two methods I did here if given more time, I would have done it with few more methods to achieve this task either by using Apache NiFi and Apache Spark with delta table.
   
   
   
