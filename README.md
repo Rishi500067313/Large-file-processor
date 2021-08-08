@@ -22,9 +22,16 @@ This the most think about method to do any work. In this method I used Python wi
   
   The code is configured with a docker container. The docker image can be accessed from here: https://drive.google.com/file/d/1a2R2ak8NcIgVCJMpipbDGJOgo3Cg5Dfb/view?usp=sharing 
   
-  1. Firstly you have to download the docker image.
-  2. Then you need to place the python code, docker image and products.csv in a same folder.
-  3. 
+  1. Assuming you have docker installed...
+  2. Firstly you have to download the docker image.
+  3. Then you need to place the python code, docker image and products.csv in a same folder.
+  4. Then to start with it firstly use the load command:
+     
+     `docker load --input postman_dockerimage`
+     
+  5. Then use the run command to run the code:
+     
+     `d`
   
   #### Details of all the tables and their schema:
    
@@ -61,7 +68,7 @@ This the most think about method to do any work. In this method I used Python wi
       
       ![Capture4](https://user-images.githubusercontent.com/50805925/128564591-ad7366c7-0cfa-46e3-bdb5-bc6a161ea6ff.PNG)
        
-   4. The third table is only created when we need to update the table product_final. It is kind of temporary table which is dropped after its use.
+   4. The third table is only created when we need to update the table product_final. It is a **temporary table** which is dropped after its use.
       
       We just ingest the new csv into this table and run a update query.
       
@@ -174,7 +181,7 @@ This method is all about usage of snowflake data warehouse. In this method I use
       
       ![Capture 8](https://user-images.githubusercontent.com/50805925/128555020-06276125-af42-4167-9f00-22f879526d53.PNG)
       
-   4. The third table is only created when we need to update the table product_final. It is kind of temporary table which is dropped after its use.
+   4. The third table is only created when we need to update the table product_final. It is a **temporary table** which is dropped after its use.
       
       We just ingest the new csv into this table and run a update query.
       
