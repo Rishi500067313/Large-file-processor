@@ -20,7 +20,11 @@ This the most think about method to do any work. In this method I used Python wi
 
   #### Steps to run the code:
   
-  The code is configured in a docker container. The docker image can be accessed from here: 
+  The code is configured with a docker container. The docker image can be accessed from here: https://drive.google.com/file/d/1a2R2ak8NcIgVCJMpipbDGJOgo3Cg5Dfb/view?usp=sharing 
+  
+  1. Firstly you have to download the docker image.
+  2. Then you need to place the python code, docker image and products.csv in a same folder.
+  3. 
   
   #### Details of all the tables and their schema:
    
