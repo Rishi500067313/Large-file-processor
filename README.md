@@ -25,11 +25,11 @@ This the most think about method to do any work. In this method I used Python wi
   1. Assuming you have docker installed...
   2. Firstly you have to download the docker image.
   3. Then you need to place the python code, docker image and products.csv in a same folder.
-  4. Then to start with it firstly use the load command:
+  4. We need to load this downloaded file first to get a docker image as it is not downloaded from hub.docker.com
      
      `docker load --input postman_dockerimage`
      
-  5. Then use the run command to run the code:
+  5. Then to run the container that will execute our code use:
      
      `docker run -it --name postmanos -e MYSQL_ROOT_PASSWORD=password -e MYSQL_USER=root -e MYSQL_PASSWORD=password -e MYSQL_DATABASE=postman_data -v <location_of_csv>:<any_location_in_container> postman_dockerimage`
      
