@@ -106,7 +106,7 @@ This the most think about method to do any work. In this method I used Python wi
    
   #### Improving if given more days:
   
-  In this mysql method for updation join is used which becomes very expensive command to run as it takes 8 minutes of time while doing update in snowfalke jsut took 15 seconds.
+  In this mysql method for updation join is used which becomes very expensive command to run as it takes 8 minutes of time while doing update in snowflake it just took 15 seconds.
   To improve this we can use mysql query caching and avoid the inner join by using evaluate and select kind of queries.
   
   Apart from the two methods I did here if given more time, I would have done it with few more methods to achieve this task either by using *Apache NiFi and Apache Spark with delta table.*
