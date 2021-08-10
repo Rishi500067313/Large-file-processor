@@ -12,6 +12,6 @@ create or replace stage my_csv_ file_format = mycsvformat_1;
 
 put file://C:/Users/rishi/Desktop/python_files/Posmantask/products.csv @my_csv_ auto_compress=true;
 
-copy into TABLE_FINAL from @my_csv_/products.csv.gz file_format = (format_name = mycsvformat_1);
+copy into product_final from @my_csv_/products.csv.gz file_format = (format_name = mycsvformat_1);
 
 create table Aggregate_final as select name, count(*) as Num_Of_Products from postman_data.public.product_final group by name;
