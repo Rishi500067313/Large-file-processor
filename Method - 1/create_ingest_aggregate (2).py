@@ -41,7 +41,7 @@ class Sql_code:
         print("table created successfully")
         datafrm.to_sql('temp_update_table', con=engine, index=False, if_exists='append',chunksize = 1000)
         print("Data inserted successfully")
-        sql = '''UPDATE product_final INNER JOIN temp_update_table on temp_update_table.sku = product_final.sku SET product_final.name = temp_update_table.name;'''
+        sql = '''UPDATE product_final INNER JOIN temp_update_table on temp_update_table.sku = product_final.sku SET product_final.name = temp_update_table.name SET product_final.description = temp_update_table.description;'''
         engine.execute(sql);
         engine.execute("DROP TABLE temp_update_table;")
         print("Updation of table is successfull")
