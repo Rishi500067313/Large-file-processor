@@ -214,30 +214,8 @@ This method is all about usage of snowflake data warehouse. In this method I use
    3. The script *Script_to_Update.sql* is the script which will be executed to update the product_final table. Therefore there is updation support for the table.
    4. All the product details are ingested directly to a single table *product_final*.
    5. The aggregate table was also created by using CTAS command on product_final.
-  
-  #### Points not achieved by this method:
-  
-   Everything was achieved using this method. 
-  
-  
-
-   
-
 
   
-
-
-        
-    
-
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
+  
+ 
       
