@@ -27,11 +27,11 @@ This the most think about method to do any work. In this method I used Python wi
   3. Then you need to place the python code, docker image and products.csv in a same folder.
   4. We need to load this downloaded file first to get a docker image as it is not downloaded from hub.docker.com
      
-     `docker load --input postman_dockerimage`
+     `docker load --input post_dockerimage`
      
   5. Then to run the container that will execute our code use:
      
-     `docker run -it --name postmanos -e MYSQL_ROOT_PASSWORD=password -e MYSQL_USER=root -e MYSQL_PASSWORD=password -e MYSQL_DATABASE=postman_data -v <location_of_csv>:<any_location_in_container> postman_dockerimage`
+     `docker run -it --name postos -e MYSQL_ROOT_PASSWORD=password -e MYSQL_USER=root -e MYSQL_PASSWORD=password -e MYSQL_DATABASE=post_data -v <location_of_csv>:<any_location_in_container> post_dockerimage`
      
      NOTE: *You need to specify in this command where the products.csv is located and then mount it to any location in docker. The location where which choose in docker will have to be updated in the python code also.*
      
@@ -173,7 +173,7 @@ This method is all about usage of snowflake data warehouse. In this method I use
       
       To create this table the command is:
       
-      `create table postman_data.public.product_final (name text, sku text, description text, primary key (sku));`
+      `create table post_data.public.product_final (name text, sku text, description text, primary key (sku));`
       
       Few rows from this table after ingestion of products.csv:
       
@@ -185,7 +185,7 @@ This method is all about usage of snowflake data warehouse. In this method I use
       
       To create this table the command is:
       
-      `create table Aggregate_final as select name, count(*) as Num_Of_Products from postman_data.public.product_final group by name;`
+      `create table Aggregate_final as select name, count(*) as Num_Of_Products from post_data.public.product_final group by name;`
       
       Few rows from this table after aggreation query (CTAS) of product_final:
       
